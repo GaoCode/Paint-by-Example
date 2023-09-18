@@ -18,6 +18,7 @@ resized_mask = 255 - resized_mask
 resized_mask[resized_mask < 128] = 0
 resized_mask[resized_mask >= 128] = 255
 # Mask input image with binary mask
+print(resized_img.shape, resized_mask.shape)
 result = cv2.bitwise_and(resized_img, resized_mask)
 # Color background white
 result[resized_mask == 0] = 255  # Optional
