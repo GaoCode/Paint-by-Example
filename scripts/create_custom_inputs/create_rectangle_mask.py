@@ -1,7 +1,14 @@
 import cv2
 import numpy as np
+import os
 
-image_path = "examples/figlib/1495302789_-01680.jpg"
+MOUNT_POINT = os.path.join(os.environ["HOME"], "bushfire")
+
+image_path = os.path.join(
+    MOUNT_POINT,
+    "u5155914/models/Paint-by-Example/background_images/background.jpg",
+)
+
 image = cv2.imread(image_path)
 resized_img = cv2.resize(image, (512, 512), interpolation=cv2.INTER_AREA)
 save_img = "examples/figlib/background.jpg"
