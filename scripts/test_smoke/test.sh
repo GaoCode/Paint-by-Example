@@ -4,14 +4,17 @@ seed=1
 image_path=examples/figlib/background.jpg
 mask_path=examples/figlib/mask.jpg
 reference_path=examples/big_smoke/0adda456-f86b-4bd3-bacb-be3918a0aa89.jpeg
-output_path=examples/figlib
+output_path=examples/figlib/output
 
-python scripts/inference.py \
-    --plms --outdir ${output_path} \
-    --config configs/v1.yaml \
-    --ckpt ${model_path} \
-    --image_path ${image_path} \
-    --mask_path ${mask_path} \
-    --reference_path ${reference_path} \
-    --seed ${seed} \
-    --scale 5
+for ((seed=1; seed<=5; seed++))
+do
+    python scripts/inference.py \
+        --plms --outdir ${output_path} \
+        --config configs/v1.yaml \
+        --ckpt ${model_path} \
+        --image_path ${image_path} \
+        --mask_path ${mask_path} \
+        --reference_path ${reference_path} \
+        --seed ${seed} \
+        --scale 5
+done
