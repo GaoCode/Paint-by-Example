@@ -286,12 +286,16 @@ def main():
     batch_size = opt.n_samples
     n_rows = opt.n_rows if opt.n_rows > 0 else batch_size
 
-    sample_path = os.path.join(outpath, "source")
-    result_path = os.path.join(outpath, "results")
-    grid_path=os.path.join(outpath, "grid")
-    os.makedirs(sample_path, exist_ok=True)
-    os.makedirs(result_path, exist_ok=True)
-    os.makedirs(grid_path, exist_ok=True)
+    sample_path = outpath
+    result_path = outpath
+    grid_path = outpath
+
+    # sample_path = os.path.join(outpath, "source")
+    # result_path = os.path.join(outpath, "results")
+    # grid_path=os.path.join(outpath, "grid")
+    # os.makedirs(sample_path, exist_ok=True)
+    # os.makedirs(result_path, exist_ok=True)
+    # os.makedirs(grid_path, exist_ok=True)
   
 
     start_code = None
